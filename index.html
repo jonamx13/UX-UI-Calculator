@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX/UI Calculator</title>
+    <link rel="stylesheet" href="./css/gridnflex.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="title">Calculator UI/UX</h1>
+    <div class="container">
+        <div class="display">
+            <div class="display__color-mode">
+                <span>Light mode</span>
+                <button>P</button>   
+            </div>
+            <div class="display__output">
+                <span class="display__operator">S1</span>
+                <input type="text" placeholder="0">
+                <span class="display__operator">S2</span>
+                <input type="text" placeholder="0">
+                <span class="display__operator">S3</span>
+                <input type="text" placeholder="0">
+                <span class="display__operator-big">S4</span>
+                <input class="display__operator-big" type="text" placeholder="0">
+            </div>
+        </div>
+        <div action="" class="calculator">
+            <!--First buttons row-->
+                <input class="calculator__button calculator__button--dark1" type="button" value ="C">
+                <input class="calculator__button calculator__button--dark1" type="button" value ="(">
+                <input class="calculator__button calculator__button--dark1" type="button" value =")">
+                <input class="calculator__button calculator__button--light2" type="button" value ="÷">
+            <!--Second buttons row-->
+                <input class="calculator__button calculator__button--light1" type="button" value ="7">
+                <input class="calculator__button calculator__button--light1" type="button" value ="8">
+                <input class="calculator__button calculator__button--light1" type="button" value ="9">
+                <input class="calculator__button calculator__button--light2" type="button" value ="x">
+            <!--Third buttons row-->
+                <input class="calculator__button calculator__button--light1" type="button" value ="4">
+                <input class="calculator__button calculator__button--light1" type="button" value ="5">
+                <input class="calculator__button calculator__button--light1" type="button" value ="6">
+                <input class="calculator__button calculator__button--light2" type="button" value ="-">
+            <!--Fourth buttons row-->
+                <input class="calculator__button calculator__button--light1" type="button" value ="1">
+                <input class="calculator__button calculator__button--light1" type="button" value ="2">
+                <input class="calculator__button calculator__button--light1" type="button" value ="3">
+                <input class="calculator__button calculator__button--light2" type="button" value ="+">
+            <!--Fourth buttons row-->
+                <input class="calculator__button calculator__button--light1" type="button" value ="0">
+                <input class="calculator__button calculator__button--light1" type="button" value =".">
+                <input class="calculator__button--large calculator__button--dark2" type="button" value ="=">
+        </div>
+        <p class="footer-made">Made by Jonathan Meixueiro</p>
+    </div>
+</body>
+</html>
