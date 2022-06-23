@@ -1,0 +1,8 @@
+    /*Color Toggle*/
+    .display__color-mode button {
+        cursor: pointer;
+    }
+
+    .calculator input {
+        cursor: pointer;
+    }

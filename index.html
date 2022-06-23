@@ -6,19 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX/UI Calculator</title>
     <link rel="stylesheet" href="./css/gridnflex.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/function.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
+    <script src="./js/script.js"></script>
 </head>
 <body>
+    <!--Title-->
     <h1 class="title">Calculator UI/UX</h1>
+    <!--Begins Container-->
     <div class="container">
         <div class="display">
+            <!--Toggle Color-->
             <div class="display__color-mode">
                 <span>Light mode</span>
-                <button>P</button>   
+                <button>
+                    <div class="toggle"></div>
+                </button>   
             </div>
+            <!--Inputs and Outputs-->
             <div class="display__output">
                 <span class="display__operator">S1</span>
                 <input type="text" placeholder="0">
@@ -27,15 +36,15 @@
                 <span class="display__operator">S3</span>
                 <input type="text" placeholder="0">
                 <span class="display__operator-big">S4</span>
-                <input class="display__operator-big" type="text" placeholder="0">
+                <input class="display__output-big" type="text" placeholder="0">
             </div>
         </div>
         <div action="" class="calculator">
             <!--First buttons row-->
-                <input class="calculator__button calculator__button--dark1" type="button" value ="C">
+                <input class="calculator__button calculator__button--dark1" type="button" value ="C" onclick="clearScreen()">
                 <input class="calculator__button calculator__button--dark1" type="button" value ="(">
                 <input class="calculator__button calculator__button--dark1" type="button" value =")">
-                <input class="calculator__button calculator__button--light2" type="button" value ="÷">
+                <input class="calculator__button calculator__button--light2" type="button" value ="/">
             <!--Second buttons row-->
                 <input class="calculator__button calculator__button--light1" type="button" value ="7">
                 <input class="calculator__button calculator__button--light1" type="button" value ="8">
