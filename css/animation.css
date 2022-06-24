@@ -1,0 +1,10 @@
+.calculator__button--light1 {
+    background-color: white;
+    border: none;
+    color: #BFBFBF;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+  
+  .calculator__button--light1:hover {opacity: 1}

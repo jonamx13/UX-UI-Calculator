@@ -7,12 +7,12 @@
     <title>UX/UI Calculator</title>
     <link rel="stylesheet" href="./css/gridnflex.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animation.css">
     <link rel="stylesheet" href="./css/function.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
-    <script src="./js/script.js"></script>
 </head>
 <body>
     <!--Title-->
@@ -35,13 +35,13 @@
                 <input type="text" placeholder="0">
                 <span class="display__operator">S3</span>
                 <input type="text" placeholder="0">
-                <span class="display__operator-big">S4</span>
-                <input class="display__output-big" type="text" placeholder="0">
+                <span class="display__operator-big" >S4</span>
+                <input class="display__output-big" id="input" type="text" placeholder="0">
             </div>
         </div>
         <div action="" class="calculator">
             <!--First buttons row-->
-                <input class="calculator__button calculator__button--dark1" type="button" value ="C" onclick="clearScreen()">
+                <input class="calculator__button calculator__button--dark1" type="button" value ="C" id="clear")">
                 <input class="calculator__button calculator__button--dark1" type="button" value ="(">
                 <input class="calculator__button calculator__button--dark1" type="button" value =")">
                 <input class="calculator__button calculator__button--light2" type="button" value ="/">
@@ -63,9 +63,11 @@
             <!--Fourth buttons row-->
                 <input class="calculator__button calculator__button--light1" type="button" value ="0">
                 <input class="calculator__button calculator__button--light1" type="button" value =".">
-                <input class="calculator__button--large calculator__button--dark2" type="button" value ="=">
+                <input class="calculator__button calculator__button--light1" type="button" value ="<=" id="erase">
+                <input class="calculator__button calculator__button--dark2" type="button" value ="=" id="equal">
         </div>
         <p class="footer-made">Made by Jonathan Meixueiro</p>
     </div>
+    <script src="./js/script.js"></script>
 </body>
 </html>

@@ -5,6 +5,11 @@
     font-size: 62.5%;
 
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
 .title{
     font-size: 5rem;
     text-align: center;
@@ -31,7 +36,8 @@
     justify-content: flex-end;
     align-items: center;
     margin-right: 2.5rem;
-    margin-left: 2.5rem
+    margin-left: 2.5rem;
+    padding-top: 1rem;
 }
 
 .display__color-mode span{
@@ -87,9 +93,10 @@
 
 .calculator {
     padding-left: 2.5rem;
-    padding-right: 3rem;
+    padding-right: 2.5rem;
     padding-top: 3rem;
     display: grid;
+    grid-template-columns: repeat(4,1fr);
     gap: 1rem;
 
 }
@@ -98,10 +105,6 @@
 .calculator__button {
     height: 5rem;
     width: 5rem;
-}
-
-.calculator__button--large{
-    grid-column: 3 / 5;
 }
 
 .footer-made {
