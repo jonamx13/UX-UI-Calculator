@@ -1,3 +1,11 @@
+//Toggle color mode
+const body = document.querySelector("body");
+const toggle = document.getElementById("toggle");
+toggle.onclick = function() {
+    toggle.classList.toggle("active")
+    body.classList.toggle("active");
+}
+
 let equal_pressed = 0;
 //Refer all buttons excluding AC and DEL
 let button_input = document.querySelectorAll(".input-button");
@@ -41,4 +49,13 @@ equal.addEventListener("click", () => {
     //If user has entered invalid input
     alert("Invalid Input");
   }
+});
+
+//Clear Whole Input
+clear.addEventListener("click", () => {
+  input.value = "";
+});
+//Erase Single Digit
+erase.addEventListener("click", () => {
+  input.value = input.value.substr(0, input.value.length - 1);
 });

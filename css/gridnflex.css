@@ -24,7 +24,7 @@
 
 /**Display**/
 .display {
-    width:28.125rem;
+    width:100%;
     height: 20.2rem;
     align-content: end;
 
@@ -43,16 +43,15 @@
 .display__color-mode span{
     padding-right: .5rem;
 }
-.display__color-mode button{
-    width: 3.75rem;
-    height: 1.87rem;
-    border-radius: 1rem;
+#toggle {
+    width: 4rem;
+    height: 2rem;
 }
 
-.toggle {
-    width: 1.4rem;
-    height: 1.4rem;
-    margin: .12rem;
+#toggle .indicator {
+    margin: 0;
+    width: 2rem;
+    height: 2rem;
 }
 
     /*Operator and numberfields*/
