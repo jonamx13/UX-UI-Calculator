@@ -1,3 +1,24 @@
+:root {
+
+  /**Button colors**/
+  --darkButton1_Hover:#a1a1a1;
+  --lightButton1_Hover:#dddddd;
+  --darkButton2_Hover:#1c78be;
+  --lightButton2_Hover:#58abff;
+  --darkButton1_Active:#ffffff;
+  --lightButton1_Active:#adfaff;
+  --darkButton2_Active:#6bedf7;
+  --lightButton2_Active:#1ef0ff;
+  --glowActive:#31b9db;
+
+  /**Font colors*/
+  --mainFontColor:#474747;
+  --DB1font:#474747;
+  --LB1font:#707070;
+  --DB2font:#FFFFFF;
+  --LB2font:#055C91;
+}
+
 /*Toggle button*/
 
 #toggle .indicator {
@@ -24,3 +45,52 @@ body.active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#282128",endColorstr="#352337",GradientType=1);
 
   }
+
+  /*Hover Buttons*/
+
+  .calculator__button--dark1:hover {
+    background-color: var(--darkButton1_Hover);
+    color: var(--DB1font);
+    transition: 0.1s;
+}
+
+.calculator__button--dark1:active {
+  background-color: var(--darkButton1_Active);
+  box-shadow: 0 0 1rem 0 var(--glowActive);
+  transform: scale(.9);
+}
+
+.calculator__button--light1:hover {
+    background-color: var(--lightButton1_Hover);
+    color: var(--LB1font);
+    transition: 0.1s;
+}
+
+.calculator__button--light1:active {
+  background-color: var(--lightButton1_Active);
+  box-shadow: 0 0 1rem 0 var(--glowActive);
+  transform: scale(.9);
+}
+
+.calculator__button--dark2:hover {
+    background-color: var(--darkButton2_Hover);
+    color: var(--DB2font);
+    transition: 0.1s;
+}
+
+.calculator__button--dark2:active {
+  background-color: var(--darkButton2_Active);
+  box-shadow: 0 0 1rem 0 var(--glowActive);
+  transform: scale(.9);
+}
+
+.calculator__button--light2:hover {
+    background-color: var(--lightButton2_Hover);
+    color: var(--darkButton2);
+}
+
+.calculator__button--light2:active {
+  background-color: var(--lightButton2_Active);
+  box-shadow: 0 0 1rem 0 var(--glowActive);
+  transform: scale(.9);
+}

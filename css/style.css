@@ -132,21 +132,25 @@ body {
 .calculator__button--dark1 {
     background-color: var(--darkButton1);
     color: var(--DB1font);
+    transition: 0.2s;
 }
 
 .calculator__button--light1 {
     background-color: var(--lightButton1);
     color: var(--LB1font);
+    transition: 0.2s;
 }
 
 .calculator__button--dark2 {
     background-color: var(--darkButton2);
     color: var(--DB2font);
+    transition: 0.2s;
 }
 
 .calculator__button--light2 {
     background-color: var(--lightButton2);
     color: var(--darkButton2);
+    transition: 0.2s;
 }
 
 
@@ -155,4 +159,5 @@ body {
 .footer-made {
     font-size: 1rem;
     color: var(--generalGray);
+    transition: 0.2s;
 }
