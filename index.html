@@ -5,46 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UX/UI Calculator</title>
-    <link rel="stylesheet" href="./css/gridnflex.css">
-    <link rel="stylesheet" href="./css/animation.css">
-    <link rel="stylesheet" href="./css/style.css">
-   
-
     <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/gridnflex.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <!--Title-->
-    <h1 class="title">Calculator UI/UX</h1>
+    <h1 class="title">Calculator UX/UI</h1>
     <!--Begins Container-->
     <div class="container">
+        <h1 class="title-mobile">Calculator UX/UI</h1>
         <div class="display">
             <!--Toggle Color-->
             <div class="display__color-mode">
-                <span>Light mode</span>
+                <span class="toggle-text">Dark Mode</span>
                 <button id="toggle">
                     <i class="indicator"></i>
                 </button>   
             </div>
             <!--Inputs and Outputs-->
             <div class="display__output">
-                <span class="display__operator">S1</span>
-                <input type="text" placeholder="0">
-                <span class="display__operator">S2</span>
-                <input type="text" placeholder="0">
-                <span class="display__operator">S3</span>
-                <input type="text" placeholder="0">
-                <span class="display__operator-big" >S4</span>
-                <input class="display__output-big" id="input" type="text" placeholder="0">
+                <input type="text" placeholder="0" id="input" disabled>
+                <span class="display__output-operator">=</span>
+                <input class="display__output-big" id="output" type="text" placeholder="0" disabled>
             </div>
         </div>
         <div action="" class="calculator">
             <!--First buttons row-->
-                <input class="calculator__button calculator__button--dark1" type="button" value ="C" id="clear">
-                <input class="input-button calculator__button calculator__button--dark1" type="button" value ="(">
-                <input class="input-button calculator__button calculator__button--dark1" type="button" value =")">
+                <input class="calculator__button calculator__button--orange" type="button" value ="C" id="clear">
+                <input class="calculator__button calculator__button--orange" type="button" value ="Del" id="erase">
                 <input class="input-button calculator__button calculator__button--light2" type="button" value ="/">
             <!--Second buttons row-->
                 <input class="input-button calculator__button calculator__button--light1" type="button" value ="7">
@@ -64,12 +57,12 @@
             <!--Fourth buttons row-->
                 <input class="input-button calculator__button calculator__button--light1" type="button" value ="0">
                 <input class="input-button calculator__button calculator__button--light1" type="button" value =".">
-                <input class="calculator__button calculator__button--light1" type="button" value ="Del" id="erase">
                 <input class="calculator__button calculator__button--dark2" type="button" value ="=" id="equal">
         </div>
         <p class="footer-made">Made by Jonathan Meixueiro</p>
     </div>
     </div>
-    <script src="./js/script.js"></script>
+    <script src="./js/calculator.js"></script>
+    <script src="./js/toggleClass.js"></script>
 </body>
 </html>

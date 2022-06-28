@@ -2,24 +2,25 @@
 
     /**Coloring**/
     --generalGray: #BFBFBF;
-    --operatorBlue: #A6D3FF;
+    --displayOperatorLight: #A6D3FF;
     --bgCalc: #F4F4F4;
     --opStep1: #C6C6C6;
     --opStep1: #A3A3A3;
     --opStep1: #707070;
     --result: #474747;
-    --bgGrad1: #ffefff;
-    --bgGrad2: #e1f1ff;
-    --display: rgba(255, 255, 255, .5);;
+    --bgGradLight1: #fde0fd;
+    --bgGradLight2: #dbeeff;
+    --display: rgba(255, 255, 255, .5);
 
     /**Button colors**/
-    --darkButton1:#BFBFBF;
+    --orangeButton:#fcac43;
     --lightButton1:#FFFFFF;
     --darkButton2:#0092FF;
     --lightButton2:#A6D3FF;
 
     /**Font colors*/
-    --mainFontColor:#474747;
+    --mainFontColorLight:#474747;
+    --secondaryFontColorLight:#777777;
     --DB1font:#474747;
     --LB1font:#707070;
     --DB2font:#FFFFFF;
@@ -32,33 +33,49 @@
 }
 
 .title{
-    color: var(--mainFontColor);
-    font-size: 5rem;
-    text-align: center;
+    color: var(--mainFontColorLight);
+    font-size: 4rem;
+    transition: 0.5s;
 }
 
+.title-mobile {
+    visibility: hidden;
+    color: var(--mainFontColorLight);
+    text-align: center;
+    font-size: 2rem;
+    margin: .5rem 0;
+}
+
+
 body {
-    background: var(--bgGrad1);
-    background: -moz-radial-gradient(circle, rgba(255,239,255,1) 0%, rgba(225,241,255,1) 34%, rgba(255,239,255,1) 64%, rgba(225,241,255,1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(255,239,255,1) 0%, rgba(225,241,255,1) 34%, rgba(255,239,255,1) 64%, rgba(225,241,255,1) 100%);
-    background: radial-gradient(circle, rgba(255,239,255,1) 0%, rgba(225,241,255,1) 34%, rgba(255,239,255,1) 64%, rgba(225,241,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--bgGrad1)",endColorstr="var(--bgGrad2)",GradientType=1);
+    background: linear-gradient(270deg,var(--bgGradLight1) ,var(--bgGradLight2));
+    background-size: 400% 400%;
+
+    animation: BGMove 10s ease infinite;
     
+}
+
+@keyframes BGMove {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 .container {
     background: rgba( 182, 182, 182, 0.1 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 7px );
-    border-radius: 10px;
+    box-shadow: 0 .8rem 3.2rem  0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur(.7rem);
+    border-radius: 1rem;
     border: .1rem solid rgba( 255, 255, 255, 0.18 );
-    border-radius: 2.875rem;
+    border-radius: 3rem;
     font-size: 2rem;
+    transition: 0.5s;
 }
 
-/**Diplay**/
+/**Display**/
 .display {
     background-color: var(--display);
+    transition: 0.5s;
 }
 .display__color-mode {
     display: flex;
@@ -66,18 +83,14 @@ body {
     font-size: 2rem;
 }
 
-.display__screen {
-    background-color: #FFFFFF;
-    border-style: none;
-}
+/*Color Toggle Button*/
 
-/*Color Toggle*/
-
-.display__color-mode span {
+.display__color-mode .toggle-text {
     font-size: 1rem;
-    color: var(--mainFontColor);
+    color: var(--mainFontColorLight);
     border-radius: 50%;
     font-size: 1rem;
+    transition: 0.5s;
 }
 #toggle  {
     border-radius: 1rem;
@@ -92,27 +105,36 @@ body {
     transform: scale(.8);
     border-radius: 50%;
     background-color: var(--darkButton2);
+    cursor: pointer;
+    transition: 0.5s;
 }
 
     /*Operator and numberfields*/
-.display__output input {
+#input {
+    color: var(--secondaryFontColorLight);
     text-align: right;
-    font-size: 1.5rem ;
+    font-size: 2.5rem ;
+    background: none;
+    border-style: none;
+    transition: 0.5;
 }
-.display__output span {
-    background-color: var(--generalGray);
-    border-radius: 50%;
-    font-size: 1rem;
+
+#output {
+    font-size: 4rem;
+    background: none;
+    border-style: none;
+    color: var(--mainFontColorLight);
+    transition: 0.5s;
 }
+
 
     /*Result operator and field*/
 
-.display__output .display__operator-big {
-    background-color: var(--operatorBlue);
-}
-
-.display__output .display__output-big {
-    font-size: 3rem
+.display__output-operator {
+    background-color: var(--displayOperatorLight);
+    color: var(--LB2font);
+    font-size: 2rem;
+    border-radius: 50%;
 }
 
 
@@ -124,14 +146,19 @@ body {
     border-style: none;
     text-align: center;
     font-size: 2rem;
+    cursor: pointer;
+}
+
+#clear, #equal {
+    border-radius: 5rem;
 }
 
 
 /**Button Styling**/
 
-.calculator__button--dark1 {
-    background-color: var(--darkButton1);
-    color: var(--DB1font);
+.calculator__button--orange {
+    background-color: var(--orangeButton);
+    color: var(--DB2font);
     transition: 0.2s;
 }
 
@@ -160,4 +187,10 @@ body {
     font-size: 1rem;
     color: var(--generalGray);
     transition: 0.2s;
+}
+
+/*User unselectable*/
+
+.title.title-mobile.toggle-text, .display__output-operator, .footer-made {
+    user-select: none;
 }

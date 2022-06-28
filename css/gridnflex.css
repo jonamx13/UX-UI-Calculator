@@ -10,16 +10,19 @@
     box-sizing: border-box;
   }
 
-.title{
-    font-size: 5rem;
+.title {
     text-align: center;
 }
+.title-mobile {
+
+    text-align: center;
+}
+
 
 .container {
     width: 28.125rem;
     height: 60.9rem;
     margin: 0 auto;
-    padding-top: 3rem;
 }
 
 /**Display**/
@@ -67,25 +70,21 @@
     text-align: center;
 }
 
-.display__output span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-self: center;
-    height: 2rem;
-    width: 2rem;
-}
-
     /*Result operator and field*/
 
-.display__output .display__operator-big {
+.display__output-operator {
     height: 2.5rem;
     width: 2.5rem;
     align-self: center;
 }
 
-.display__output .display__output-big {
-    height: 3.1rem;
+#input {
+    grid-column: 1 / 3;
+}
+#output {
+    height: 4rem;
+
+    text-align: right;
 }
 
 /**Calculator Buttons**/
@@ -105,6 +104,17 @@
     height: 5rem;
     width: 5rem;
 }
+
+#clear {
+    grid-column: 1 / 3;
+    width: 11rem;
+}
+
+#equal {
+    grid-column: -1 / -3;
+    width: 11rem;
+}
+
 
 .footer-made {
     margin-top: 2.5rem;

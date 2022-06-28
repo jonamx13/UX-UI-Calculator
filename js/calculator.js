@@ -1,16 +1,9 @@
-//Toggle color mode
-const body = document.querySelector("body");
-const toggle = document.getElementById("toggle");
-toggle.onclick = function() {
-    toggle.classList.toggle("active")
-    body.classList.toggle("active");
-}
-
 let equal_pressed = 0;
 //Refer all buttons excluding AC and DEL
 let button_input = document.querySelectorAll(".input-button");
 //Refer input,equal,clear and erase
 let input = document.getElementById("input");
+let output = document.getElementById("output");
 let equal = document.getElementById("equal");
 let clear = document.getElementById("clear");
 let erase = document.getElementById("erase");
@@ -34,26 +27,28 @@ button_input.forEach((button_class) => {
 //Solve the user's input when clicked on equal sign
 equal.addEventListener("click", () => {
   equal_pressed = 1;
-  let inp_val = input.value;
+  let inp_val = input.value.replace(/x/g, "*"); //Solution to eval multiplication
+
   try {
     //evaluate user's input
     let solution = eval(inp_val);
     //True for natural numbers
-    //false for decimals
+    //False for decimals
     if (Number.isInteger(solution)) {
-      input.value = solution;
+      output.value = solution;
     } else {
-      input.value = solution.toFixed(2);
+      output.value = solution.toFixed(2);
     }
   } catch (err) {
     //If user has entered invalid input
-    alert("Invalid Input");
+    output.value = "Error";
   }
 });
 
 //Clear Whole Input
 clear.addEventListener("click", () => {
   input.value = "";
+  output.value = "";
 });
 //Erase Single Digit
 erase.addEventListener("click", () => {

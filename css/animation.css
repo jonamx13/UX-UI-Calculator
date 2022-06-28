@@ -1,18 +1,29 @@
 :root {
 
   /**Button colors**/
-  --darkButton1_Hover:#a1a1a1;
+    /*Toggle Light/Dark*/
+    --darkLightButton: #474747;
+    --displayDark: rgba(0, 0, 0, .2);
+    --displayOperatorDark: #58abff;
+    --bgGradDark1:#110e11;
+    --bgGradDark2:#352337;
+
+    /*Hover*/
+  --orangeButton_Hover:#d67f0d;
   --lightButton1_Hover:#dddddd;
   --darkButton2_Hover:#1c78be;
   --lightButton2_Hover:#58abff;
-  --darkButton1_Active:#ffffff;
+    /*Active*/
+  --orangeButton_Active:#ffffff;
   --lightButton1_Active:#adfaff;
   --darkButton2_Active:#6bedf7;
   --lightButton2_Active:#1ef0ff;
   --glowActive:#31b9db;
 
+
   /**Font colors*/
-  --mainFontColor:#474747;
+  --mainFontColorDark:#ffffff;
+  --secondaryFontColorDark:#dddddd;
   --DB1font:#474747;
   --LB1font:#707070;
   --DB2font:#FFFFFF;
@@ -20,77 +31,103 @@
 }
 
 /*Toggle button*/
-
-#toggle .indicator {
-  cursor: pointer;
-  transition: 0.5s;
+.title.active {
+  color: var(--mainFontColorDark);
+}
+.title-mobile.active {
+  color: var(--mainFontColorDark);
 }
 
+
 #toggle.active .indicator{
-  background-color: white;
   transform: scale(0.8) translateX(2.5rem);
 }
 
-/*Background*/
-
-body{
-  transition: 0.5s;
+.display__color-mode .toggle-text.active {
+  color: var(--mainFontColorDark);
 }
 
-body.active {
-  background: rgb(40,33,40);
-  background: -moz-radial-gradient(circle, rgba(40,33,40,1) 0%, rgba(53,35,55,1) 34%, rgba(40,33,40,1) 64%, rgba(53,35,55,1) 100%);
-  background: -webkit-radial-gradient(circle, rgba(40,33,40,1) 0%, rgba(53,35,55,1) 34%, rgba(40,33,40,1) 64%, rgba(53,35,55,1) 100%);
-  background: radial-gradient(circle, rgba(40,33,40,1) 0%, rgba(53,35,55,1) 34%, rgba(40,33,40,1) 64%, rgba(53,35,55,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#282128",endColorstr="#352337",GradientType=1);
+.display__output-operator.active {
+  background-color: var(--displayOperatorDark);
+  color: var(--DB2font);
+}
 
+#input.active {
+  color: var(--secondaryFontColorDark)
+}
+
+#output.active {
+  color: var(--mainFontColorDark) ;
+}
+
+.display.active {
+  background-color: var(--displayDark);
+}
+
+
+/*Background*/
+
+body.active {
+  background: linear-gradient(270deg,var(--bgGradDark1) ,var(--bgGradDark2));
+  background-size: 400% 400%;
+
+  animation: BGMove 10s ease infinite;
+}
+
+  /*Light/Dark Number Button Toggle*/
+
+  .calculator__button--light1.active {
+    background-color: var(--darkLightButton);
+    color: var(--DB2font);
+    transition: 0.2s;
   }
 
   /*Hover Buttons*/
 
-  .calculator__button--dark1:hover {
-    background-color: var(--darkButton1_Hover);
-    color: var(--DB1font);
+  .calculator__button--orange:hover {
+    background-color: var(--orangeButton_Hover);
     transition: 0.1s;
-}
+  }
 
-.calculator__button--dark1:active {
-  background-color: var(--darkButton1_Active);
+  .calculator__button--orange:active {
+  background-color: var(--orangeButton_Active);
+  color: var(--DB1font);
   box-shadow: 0 0 1rem 0 var(--glowActive);
   transform: scale(.9);
-}
+  }
 
-.calculator__button--light1:hover {
+  .calculator__button--light1:hover {
     background-color: var(--lightButton1_Hover);
     color: var(--LB1font);
     transition: 0.1s;
-}
+  }
 
-.calculator__button--light1:active {
+  .calculator__button--light1:active {
   background-color: var(--lightButton1_Active);
   box-shadow: 0 0 1rem 0 var(--glowActive);
   transform: scale(.9);
-}
+  }
 
-.calculator__button--dark2:hover {
+  .calculator__button--dark2:hover {
     background-color: var(--darkButton2_Hover);
     color: var(--DB2font);
     transition: 0.1s;
-}
+  }
 
-.calculator__button--dark2:active {
+  .calculator__button--dark2:active {
   background-color: var(--darkButton2_Active);
+  color: var(--LB2font);
   box-shadow: 0 0 1rem 0 var(--glowActive);
   transform: scale(.9);
-}
+  }
 
-.calculator__button--light2:hover {
+  .calculator__button--light2:hover {
     background-color: var(--lightButton2_Hover);
-    color: var(--darkButton2);
-}
+    color: var(--DB2font);
+  }
 
-.calculator__button--light2:active {
+  .calculator__button--light2:active {
   background-color: var(--lightButton2_Active);
   box-shadow: 0 0 1rem 0 var(--glowActive);
   transform: scale(.9);
-}
+  }
